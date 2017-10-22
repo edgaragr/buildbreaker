@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="default">
+<head>
+    <title>Event List</title>
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <div class="col-xs-8 col-md-8">
+        <h3>
+            <a href="/create" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> Event</a>
+        </h3>
+        <h2>Event List</h2>
+        <div class="table-responsive">
+            <table class="table" id="product-table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="event : ${events}">
+                    <td><a th:text="${event.name}" th:href="@{'/show/' + ${event.id}}"></a></td>
+                    <td th:text="${event.date}"></td>
+                    <td th:text="${event.description}"></td>
+                    <td th:text="${event.amount}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

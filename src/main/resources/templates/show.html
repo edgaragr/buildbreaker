@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="default">
+<head>
+    <title>Show Event</title>
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <div class="col-xs-8 col-md-8">
+        <h3>
+            <a href="/event" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span> Event</a>
+        </h3>
+        <h2 th:text="${event.name}"></h2>
+        <dl class="list">
+            <dt>Description</dt>
+            <dd th:text="${event.description}"></dd>
+            <dt>Date</dt>
+            <dd th:text="${event.date}"></dd>
+            <dt>Amount</dt>
+            <dd th:text="${event.amount}"></dd>
+        </dl>
+        <form action="/delete">
+            <input type="hidden" name="id" th:value="${event.id}" />
+            <h2><input type="submit" class="btn btn-danger" value="Delete" onclick="return confirm('Are you sure?');" />
+                <a th:href="@{'/edit/' + ${event.id}}" class="btn btn-warning">Edit</a></h2>
+        </form>
+    </div>
+</div>
+</body>
+</html>
