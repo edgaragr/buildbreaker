@@ -29,5 +29,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	runtime('org.springframework.boot:spring-boot-devtools')
 	compile('org.webjars:bootstrap:3.3.7')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	
+	//compile('de.flapdoodle.embed:de.flapdoodle.embed.mongo:1.50.5')
+	//compile('cz.jirutka.spring:embedmongo-spring:RELEASE')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
