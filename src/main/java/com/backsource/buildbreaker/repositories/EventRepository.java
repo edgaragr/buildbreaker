@@ -10,4 +10,6 @@ public interface EventRepository extends CrudRepository<Event, String> {
 
     @Override
     void delete(Event deleted);
+    
+    Event findByName(String name);
 }
